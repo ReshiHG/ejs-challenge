@@ -1,0 +1,16 @@
+<%- include("partials/header") -%>
+
+<h1>Home</h1>
+
+<p> <%= homeText %> </p>
+
+<% postsArray.forEach(el => {    %>
+    <h2>
+    <a href="/posts/<%= el.title %>" style="text-decoration: none; color: black;"> <%= el.title %> </a>
+    </h2>
+    <p> <%= `${el.content.slice(0,150)}...` %>
+        <a href="/posts/<%= el.title %>">Read more</a>
+    </p>
+<% });                      %>
+
+<%- include("partials/footer") -%>
